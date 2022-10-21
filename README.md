@@ -32,14 +32,36 @@ npm i -D nodemon
 
 npm i passport passport-jwt jsonwebtoken
 
-# Orden
+# BLOG APLI
 
-1. app.js
-2. .env
-3. config.js
-4. database.js
-5. models
-6. controladores
-7. services
-8. routes
+- Front:
+* Obetner todas las publicaciones.
+* Obtener una en especifico.
+* Obtener todas las categorias
+* Obtener todos los post de una categoria en especifico
+* Obetener todos los posts que he creado
+* Podemos Paginar los Posts
 
+```json
+    {
+        "total": 68,
+        "prev": "localhost:9000/api/v1/posts?start=51&limit=60",
+        "next": "localhost:9000/api/v1/posts?start=61&limit=68",
+        "data": [
+            {
+                "id": "uncodigoUUID",
+                "title": "example-title",
+                "content": "lorem ipsum",
+                "createdBy": {
+                    "id": "uncodigoUUID",
+                    "name": "jesus",
+                    "email": "jesuschock93@gmail.com"
+                },
+                "category": {
+                    "id": 4,
+                    "name": "Tecnologia"
+                }
+            }
+        ]
+
+    }

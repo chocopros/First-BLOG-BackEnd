@@ -13,6 +13,10 @@ const Categories = db.define('categories', {
         allowNull: false
 
     }
+}, {
+    timestamps: false //Evita que squelize aguregue las columnas de creatdAt y updateAt
 })
+
+module.exports = Categories
 
 //comentaru
