@@ -42,6 +42,26 @@ npm i passport passport-jwt jsonwebtoken
 * Obetener todos los posts que he creado
 * Podemos Paginar los Posts
 
+
+# RUTAS
+
+/api/v1
+
+/users
+    - /me
+    - /me/posts -> todos los posts que creo un usuario especifico
+    - /me/posts/:id
+    - /:id
+
+/categories
+    - /:id
+    - /:id/posts
+
+/posts
+    - /:id
+
+
+
 ```json
     {
         "total": 68,
@@ -65,3 +85,4 @@ npm i passport passport-jwt jsonwebtoken
         ]
 
     }
+///

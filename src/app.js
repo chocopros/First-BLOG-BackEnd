@@ -11,8 +11,10 @@ const Users = require('./models/users.models')
 //? IMPORT Routes
 const userRouter = require('./users/users.routers')
 const authRouter = require('./auth/auth.router')
-const initModels = require('./models/initModels')
+const categoryRouter = require('./categories/categories.routers')
 
+
+const initModels = require('./models/initModels')
 
 //DATABASE AUTH AND SYNC
 db.authenticate()
@@ -23,8 +25,11 @@ db.sync()
     .then(() => console.log('DATA BASE SYNCED!!'))
     .catch(err => console.log(err))
 
+//RelationsDB
+initModels() 
 
-    
+
+//INIT START  
 app.get('/',( req, res ) => {
     res.status(200).json({
         message: 'OK!!',
@@ -32,11 +37,11 @@ app.get('/',( req, res ) => {
     })
 })
 
-initModels()
+
 
 app.use('/api/v1/users', userRouter)
 app.use('/api/v1/auth', authRouter)
-
+app.use('/api/v1/categories', categoryRouter)
 
 
 
