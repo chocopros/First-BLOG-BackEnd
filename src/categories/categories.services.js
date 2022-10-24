@@ -8,7 +8,7 @@ const getAllCategories = ( req, res ) => {
 
 const getCategoryById = ( req, res ) => {
     const id = req.params.id
-    categoriesControllers.getCategorieById(id)
+    categoriesControllers.getCategorieById(Number(id))
         .then(data => {
             data ? res.status(200).json(data) : res.status(400).json({message: 'No existe ID'});
         })

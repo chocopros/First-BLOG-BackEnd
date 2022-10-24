@@ -1,33 +1,31 @@
 const db = require('../utils/database')
-const {DataTypes} = require('sequelize') // para declarar el tipo de data en las columnas
-const Users = require('./users.models') //Se importa el modelo de usuario para poder relacionar
-const Categories = require('./categories.models') //Se importa el modelo de categorias para poder relacionar
-
+const {DataTypes} = require('sequelize')
+const Users = require('./users.models')
+const Categories = require('./categories.models')
 
 const Posts = db.define('posts', {
-
     id: {
         type: DataTypes.UUID,
         primaryKey: true,
         allowNull: false
     },
     title: {
-        type: DataTypes.STRING(30),
+        type: DataTypes.STRING, //varchar 
         allowNull: false
     },
     content: {
         type: DataTypes.TEXT,
         allowNull: false
     },
-    //?, Llave foranea desde Users
-    createdBy: {
+    //? Llave foranea de Users
+    userId: {
         type: DataTypes.UUID,
         allowNull: false,
-        field: 'created_by',
+        field: 'user_id',
         references: {
             key: 'id',
             model: Users
-        }
+        },
     },
     categoryId: {
         type: DataTypes.INTEGER,

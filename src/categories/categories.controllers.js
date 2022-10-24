@@ -9,11 +9,16 @@ const getAllCategories = async() => {
 const getCategorieById = async (id) => {
     const data = await Categories.findOne({
         where: {
-            id
+            id: id
         }
     })
     return data
 };
+
+//TEST Get ID
+// getCategorieById('3')
+//     .then(res => console.log(res))
+//     .catch(err => console.log(err))
 
 
 const createCategory = async(name) => {

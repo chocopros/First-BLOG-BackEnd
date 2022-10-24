@@ -1,4 +1,4 @@
-const router = ('express').Router()
+const router = require('express').Router()
 
 const categoryServices = require('./categories.services')
 
@@ -7,7 +7,7 @@ router.route('/') //? categories
     .post(categoryServices.postCategory)
 
 
-router.get('/:id')
+router.route('/:id')
     .get(categoryServices.getCategoryById)
 
 module.exports = router
